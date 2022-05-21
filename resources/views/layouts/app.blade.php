@@ -13,7 +13,9 @@
 
 <body>
     @include('components.navbar')
-    @yield('content')
+    <div class="page__container">
+        @yield('content')
+    </div>
 </body>
 
 </html>
