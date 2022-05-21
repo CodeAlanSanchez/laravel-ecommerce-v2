@@ -3,15 +3,15 @@
     height: 600px;
     width: min(90rem, 80%);
     margin: 0 auto;
+    background-color: black;
     &__image {
         width: 100%;
-        object-fit: cover;
+        object-fit: contain;
         height: 600px;
     }
     &__track-container {
         position: relative;
         background-color: lightgreen;
-        padding: 10px;
     }
     &__track {
         padding: 0;
@@ -23,12 +23,21 @@
         position: absolute;
         top: 0;
         bottom: 0;
+        opacity: 0;
+        &.active {
+            opacity: 1;
+            transition: opacity linear 150ms;
+        }
     }
     &__button {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         border: none;
+        padding: 1rem;
+        &:hover {
+            cursor: pointer;
+        }
     }
     &__button-left {
         left: -50px;
