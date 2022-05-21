@@ -1,15 +1,17 @@
 .carousel {
     position: relative;
-    min-height: 40rem;
+    height: 600px;
     width: min(90rem, 80%);
-    margin-inline: auto;
+    margin: 0 auto;
     &__image {
         width: 100%;
+        object-fit: cover;
+        height: 600px;
     }
     &__track-container {
         position: relative;
-        background: lightgreen;
-        padding: 1rem;
+        background-color: lightgreen;
+        padding: 10px;
     }
     &__track {
         padding: 0;
@@ -17,8 +19,38 @@
         list-style: none;
     }
     &__slide {
+        width: 100%;
         position: absolute;
         top: 0;
         bottom: 0;
+    }
+    &__button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+    }
+    &__button-left {
+        left: -50px;
+    }
+    &__button-right {
+        right: -50px;
+    }
+    &__nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0;
+    }
+    &__indicator {
+        border: 0;
+        border-radius: 50%;
+        width: 15px;
+        aspect-ratio: 1;
+        background-color: #00000030;
+        margin: 0 1rem;
+        .current_slide {
+            background-color: #00000075;
+        }
     }
 }
