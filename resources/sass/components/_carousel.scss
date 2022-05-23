@@ -11,7 +11,7 @@
     }
     &__track-container {
         position: relative;
-        background-color: lightgreen;
+        height: 100%;
     }
     &__track {
         padding: 0;
@@ -56,10 +56,16 @@
         border-radius: 50%;
         width: 15px;
         aspect-ratio: 1;
-        background-color: #00000030;
         margin: 0 1rem;
+        background-color: #aaaaaa30;
         .current_slide {
             background-color: #00000075;
+        }
+        &.active {
+            background-color: #00000030;
+        }
+        &:hover {
+            cursor: pointer;
         }
     }
 }
