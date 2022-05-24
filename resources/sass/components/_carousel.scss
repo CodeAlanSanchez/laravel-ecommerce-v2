@@ -1,13 +1,13 @@
 .carousel {
     position: relative;
-    height: 600px;
+    height: 40rem;
     width: min(90rem, 80%);
     margin: 0 auto;
-    background-color: black;
+    background-color: #00000000;
     &__image {
         width: 100%;
         object-fit: contain;
-        height: 600px;
+        height: 40rem;
     }
     &__track-container {
         position: relative;
@@ -35,15 +35,17 @@
         transform: translateY(-50%);
         border: none;
         padding: 1rem;
+        background: none;
         &:hover {
             cursor: pointer;
         }
+        z-index: 1;
     }
     &__button-left {
-        left: -50px;
+        left: 1rem;
     }
     &__button-right {
-        right: -50px;
+        right: 1rem;
     }
     &__nav {
         width: 100%;
@@ -54,7 +56,7 @@
     &__indicator {
         border: 0;
         border-radius: 50%;
-        width: 15px;
+        width: 1rem;
         aspect-ratio: 1;
         margin: 0 1rem;
         background-color: #aaaaaa30;
@@ -66,6 +68,19 @@
         }
         &:hover {
             cursor: pointer;
+        }
+    }
+}
+
+.fa-solid {
+    &.fa-chevron-right,
+    &.fa-chevron-left {
+        color: white;
+        scale: 3;
+        transition: color 100ms linear;
+        text-shadow: 0 0 1px rgb(0, 0, 0, 0.5);
+        &:hover {
+            color: #00aaff;
         }
     }
 }
