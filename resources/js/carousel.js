@@ -61,3 +61,5 @@ let switchSlide = (index) => {
 
     activateSlide();
 };
+
+let autoSlide = setInterval(() => switchSlide(1), 5000);
