@@ -1,5 +1,5 @@
 @use "../root/sizes";
 
 .page__container {
-    padding-inline: min(95%, sizes.$size-3);
+    padding-inline: max(5%, 25rem);
 }
