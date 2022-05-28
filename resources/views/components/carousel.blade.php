@@ -7,7 +7,7 @@
         <ul class="carousel__track">
             @foreach ($slides as $slide)
                 <li class="carousel__slide">
-                    <img src="{{ $slide['image_url'] }}" alt="{{ $slide['image_name'] }}">
+                    <img class="carousel__image" src="{{ $slide['image_url'] }}" alt="{{ $slide['image_name'] }}">
                 </li>
             @endforeach
         </ul>
