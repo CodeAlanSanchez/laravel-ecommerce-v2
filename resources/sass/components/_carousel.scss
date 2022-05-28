@@ -1,17 +1,17 @@
 .carousel {
     position: relative;
-    height: 40rem;
+    aspect-ratio: 2/1;
     width: min(90rem, 80%);
     margin: 0 auto 3rem;
     background-color: #00000000;
     &__image {
+        position: static;
         width: 100%;
-        object-fit: contain;
-        height: 40rem;
+        margin: auto;
     }
     &__track-container {
         position: relative;
-        height: 100%;
+        min-height: min-content;
     }
     &__track {
         padding: 0;
@@ -48,6 +48,8 @@
         right: 1rem;
     }
     &__nav {
+        position: relative;
+        top: 100%;
         width: 100%;
         display: flex;
         justify-content: center;
