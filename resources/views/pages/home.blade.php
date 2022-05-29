@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="banner banner--main">
-        <img src={{ $banner_img }} alt="Banner showing current promotions" class="banner_img">
-    </div>
     @include('components.carousel', [
         'slides' => [
             [
@@ -20,9 +17,19 @@
             ],
         ],
     ])
-    <h4 class="title">
-        title
-    </h4>
+    @include('components.products', [
+        'product_title' => 'Popular',
+        'products' => [
+            [
+                'link' => 'go.om',
+                'image' =>
+                    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.pLjna-5iqTKTXe6_yXK8zQHaJQ%26pid%3DApi&f=1',
+                'name' => 'Black T-Shirt',
+                'description' => '100% Cotton, paraben-free t-shirt made in the USA',
+                'price' => '19.99',
+            ],
+        ],
+    ])
     <div class="products__list">
 
     </div>
