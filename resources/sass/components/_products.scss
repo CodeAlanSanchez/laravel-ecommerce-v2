@@ -1,0 +1,34 @@
+.products__section {
+    .products__title {
+        margin-bottom: 1rem;
+    }
+    .products__list {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        .product__container {
+            max-width: 20rem;
+            text-decoration: none;
+            transition: color 150ms linear;
+            &:hover {
+                color: #00aaee;
+            }
+            .product__image {
+                aspect-ratio: 1;
+                object-fit: cover;
+                width: 100%;
+            }
+            .product__name {
+                font-weight: 400;
+            }
+            .product__description {
+            }
+            .product__divider {
+                border: none;
+                border-top: #bbbbbb 0.1rem solid;
+            }
+            .product__price {
+            }
+        }
+    }
+}
