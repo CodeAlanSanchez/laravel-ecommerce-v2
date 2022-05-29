@@ -1,0 +1,30 @@
+.navigation {
+    width: min(95%, 100rem);
+    margin-inline: auto;
+    .navigation__list {
+        border-bottom: 0.1rem solid #444444;
+        padding: 1rem 0;
+        margin: 1rem 0 2rem;
+        list-style: none;
+        width: 100%;
+    }
+    .navigation__item {
+        display: inline-block;
+        margin-right: 2rem;
+        &:nth-last-child(-n + 2) {
+            float: right;
+        }
+        &:nth-last-child(2) {
+            margin: 0;
+        }
+    }
+    .navigation__link {
+        text-decoration: none;
+        font-size: 1.6rem;
+        transition: color linear 75ms;
+        &:hover {
+            text-decoration: underline;
+            color: #00aaee;
+        }
+    }
+}
