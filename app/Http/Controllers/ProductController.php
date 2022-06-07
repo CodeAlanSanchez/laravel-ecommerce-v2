@@ -12,11 +12,16 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $query = request('');
+        $query = $request->query();
 
-        $products = Product::select("*")->where("", "")->get();
+        if (!$query) {
+            $products = Product::all();
+            return view('pages.products', ['products' => $products]);
+        }
+
+        $products = Product::select("*")->where("tag", $query)->get();
 
         return view('pages.products', ['products' => $products]);
     }
