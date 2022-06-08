@@ -14,14 +14,16 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        $query = $request->query();
+        $gender = $request->route('group');
 
-        if (!$query) {
-            $products = Product::all();
+        var_dump($gender);
+
+        if ($gender != null) {
+            $products = Product::select()->where('gender', $gender)->get();
             return view('pages.products', ['products' => $products]);
         }
 
-        $products = Product::select("*")->where("tag", $query)->get();
+        $products = Product::all();
 
         return view('pages.products', ['products' => $products]);
     }
