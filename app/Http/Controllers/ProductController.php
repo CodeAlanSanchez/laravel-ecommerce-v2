@@ -25,7 +25,7 @@ class ProductController extends Controller
 
         $products = Product::all();
 
-        return view('pages.products', ['products' => $products]);
+        return view('products.index', ['products' => $products]);
     }
 
     /**
@@ -35,7 +35,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('products.create');
     }
 
     /**
