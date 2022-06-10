@@ -16,11 +16,9 @@ class ProductController extends Controller
     {
         $gender = $request->route('group');
 
-        var_dump($gender);
-
         if ($gender != null) {
             $products = Product::select()->where('gender', $gender)->get();
-            return view('pages.products', ['products' => $products]);
+            return view('products.index', ['products' => $products]);
         }
 
         $products = Product::all();
