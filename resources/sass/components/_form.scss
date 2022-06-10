@@ -1,0 +1,45 @@
+@use "../root/colors";
+
+.form__container {
+    border: 0.0625rem solid colors.$shadow;
+    border-radius: 0.125rem;
+    padding: 1.5rem;
+    width: fit-content;
+    background-color: #f3f3f3;
+}
+
+.form {
+    width: min(100%, 25rem);
+    .input {
+        display: flex;
+        flex-flow: column nowrap;
+        width: fit-content;
+        padding-bottom: 0.75rem;
+        width: 100%;
+        label {
+            padding-bottom: 0.25rem;
+        }
+        &.required label {
+            &:after {
+                color: colors.$danger;
+                content: " *";
+            }
+        }
+        input,
+        textarea,
+        select {
+            width: 100%;
+        }
+        input[type="text"],
+        textarea {
+            padding: 0.1rem 0.25rem;
+            border: 0.0625rem solid colors.$shade;
+            border-radius: 0.125rem;
+            resize: none;
+            &::placeholder {
+                color: colors.$shadow;
+                font-weight: 300;
+            }
+        }
+    }
+}
