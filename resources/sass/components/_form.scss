@@ -1,7 +1,7 @@
 @use "../root/colors";
 
 .form__container {
-    border: 0.0625rem solid colors.$shadow;
+    border: 0.0625rem solid colors.$moon;
     border-radius: 0.125rem;
     padding: 1.5rem;
     width: fit-content;
@@ -9,6 +9,9 @@
 }
 
 .form {
+    & &__title {
+        color: colors.$shade;
+    }
     width: min(100%, 25rem);
     .input {
         display: flex;
@@ -33,7 +36,7 @@
         input[type="text"],
         textarea {
             padding: 0.1rem 0.25rem;
-            border: 0.0625rem solid colors.$shade;
+            border: 0.0625rem solid colors.$moon;
             border-radius: 0.125rem;
             resize: none;
             &::placeholder {
