@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
 
-Route::get('/products/male', [ProductController::class, 'index']);
-Route::get('/products/female', [ProductController::class, 'index']);
+Route::get('/products/men', [ProductController::class, 'index']);
+Route::get('/products/women', [ProductController::class, 'index']);
 
 Route::resource('products', \App\Http\Controllers\ProductController::class);
