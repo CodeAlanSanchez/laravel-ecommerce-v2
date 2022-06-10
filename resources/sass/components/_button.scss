@@ -1,0 +1,63 @@
+@use "../root/colors";
+
+$border-size: 0.0625rem;
+$text-color: colors.$chalk;
+
+@mixin button($color) {
+    font-size: 1.2rem;
+    font-weight: 300;
+    cursor: pointer;
+    color: $text-color;
+    padding: 0.125rem 0.75rem;
+    transition: all 75ms linear;
+    border-radius: 0.25rem;
+    background-color: $color;
+    border: none;
+    &:hover {
+        background-color: darken($color, 3);
+    }
+    &.outline {
+        color: $color;
+        border: $border-size solid $color;
+        text-shadow: none;
+        padding: 0.125rem 0.75rem;
+        background-color: transparent;
+        &.opaque {
+            background-color: #ffffff;
+        }
+    }
+    &.outline:hover {
+        color: #ffffff;
+        background-color: $color;
+    }
+    &.sm {
+        font-size: 1rem;
+    }
+    &.lg {
+        font-size: 2rem;
+    }
+    &.round {
+        border-radius: 2.5rem;
+    }
+    &.text {
+        padding: 0;
+        border: none;
+        background-color: #ffffff;
+        &:hover {
+            color: darken($color, 3);
+            border: 0.0625rem solid darken($color, 2);
+        }
+    }
+    &.border {
+        border: $border-size solid darken($color, 2);
+    }
+    text-shadow: 0 calc(var(0.5rem) / 3.5) 0 darken($color, 2);
+}
+
+.button--primary {
+    @include button(colors.$primary);
+}
+
+.button--neutral {
+    @include button(colors.$shade);
+}
