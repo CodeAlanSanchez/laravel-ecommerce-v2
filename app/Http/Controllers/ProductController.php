@@ -44,7 +44,16 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'required|max:1023',
+            'price' => 'required|numeric|max:999',
+            'image' => 'required|image',
+            'discount' => 'numeric',
+            'gender' => ''
+        ]);
+
+        return view('products.view');
     }
 
     /**
@@ -55,7 +64,6 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
