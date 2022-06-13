@@ -5,6 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
+use Str;
+use Storage;
+
+use JWTAuth;
+use Tymon\JWTAuth\Exceptions\JWTException;
+use Tymon\JWTAuth\Exceptions\TokenExpiredException;
+use Tymon\JWTAuth\Exceptions\TokenInvalidException;
+use Tymon\JWTAuth\Facades\JWTAuth as FacadesJWTAuth;
+
 class ProductController extends Controller
 {
     /**
@@ -51,6 +60,28 @@ class ProductController extends Controller
             'image' => 'required|image',
             'discount' => 'numeric',
             'gender' => ''
+        ]);
+
+        if (preg_match('/^data:image\/(\w+);base64,/', $base64_image = request('image'))) {
+            $image = substr($base64_image, strpos($base64_image, ',') + 1);
+
+            $image = base64_decode($image);
+
+            $imageName = Str::random(16);
+
+            Storage::disk('public')->put($imageName . ".png", $image);
+
+            $imagePath = Storage::url($imageName . ".png");
+        }
+
+        $user = JWTAuth::user();
+
+        $product = $user->products()->create([
+            'name' => $validated['name'],
+            'image' => $imagePath,
+            'price' => $validated['price'],
+            'category' => $validated['category'],
+            'discount' => $validated['discount'],
         ]);
 
         return view('products.view');
